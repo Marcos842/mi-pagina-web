@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contacto - MarR</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="estilo.css"> 
+
+</head>
+<body id="top">
+  
+  <header>
+    <h1>CONTACTANOS</h1>
+  </header>
+  
+  <main class="py-5">
+    <div class="container">
+      <h2 class="mb-4">¿Quieres comunicarte con nosotros?</h2>
+      <p>Estamos disponibles para ayudarte y recibir tus sugerencias, dudas o colaboraciones.</p>
+
+      <div class="row gy-4">
+        
+        <div class="col-lg-7">
+          <form action="#" method="post" class="card p-4 card-anim">
+            <h3>Envíanos un mensaje</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input id="nombre" type="text" class="form-control" required placeholder="Tu nombre">
+              </div>
+
+              <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input id="apellido" type="text" class="form-control" required placeholder="Tu apellido">
+              </div>
+
+              <div class="col-12">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input id="email" type="email" class="form-control" required placeholder="usuario@correo.com">
+              </div>
+
+              <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea id="mensaje" class="form-control" rows="5" required placeholder="Cuéntanos qué necesitas..."></textarea>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary btn-send w-100" type="submit">
+                  <i class="bi bi-send-fill me-2"></i>Enviar mensaje
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card p-3 mb-3 card-anim">
+            <h5><i class="bi bi-person-lines-fill me-2"></i>Información de contacto</h5>
+            <p class="mb-1">
+                <i class="bi bi-envelope-fill me-2 text-danger"></i>
+                <strong>Correo:</strong> mb2571079@gmail.com
+            </p>
+            <p class="mb-0">
+                <i class="bi bi-telephone-fill me-2 text-primary"></i>
+                <strong>Teléfono:</strong> +51 904 874 232
+            </p>
+          </div>
+
+          <div class="card p-3 card-anim">
+            <h5 class="mb-2"><i class="bi bi-share-fill me-2"></i>Síguenos en redes</h5>
+            <ul class="list-unstyled">
+              <li class="mb-1">
+                <i class="bi bi-facebook me-2 text-primary"></i>
+                <a href="https://facebook.com/61564083532435" target="_blank" class="text-decoration-none">Facebook</a>
+              </li>
+              <li class="mb-1">
+                <i class="bi bi-twitter me-2 text-info"></i>
+                <a href="https://twitter.com/sitio" target="_blank" class="text-decoration-none">Twitter</a>
+              </li>
+              <li>
+                <i class="bi bi-instagram me-2 text-danger"></i>
+                <a href="https://instagram.com/marcostg_22" target="_blank" class="text-decoration-none">Instagram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </main>
+  
+  <div class="nav-final-bar">
+    <p><a href="recursos.html">← Volver a página anterior</a> | <a href="Web.html">🏠 Página de inicio</a></p>
+  </div>
+  
+  <a href="Web.html" id="scrollUpButton" class="d-md-block" title="Volver a la página principal">
+      🏠 Inicio
+  </a>
+
+  <a href="recursos.html" id="previousButton" class="d-none d-md-block" title="Volver a la página anterior">
+      ← Anterior
+  </a>
+  
+  <a href="#" id="nextButton" class="d-none" title="No hay página siguiente">
+      </a>
+
+  <footer>
+    <p>&copy; 2025 MarR | Para fines educativos y prácticos</p>
+  </footer>
+
+</body>
+</html>
