@@ -93,8 +93,14 @@ header p {
 
 /* Barra principal tipo Bootstrap docs */
 .barra-principal {
-  background-color: #212529;  /* color morado */
+  background-color: #212529;   
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;               
 }
+
 
 /* Logo en el navbar */
 .logo-marR {
@@ -299,3 +305,4 @@ body#top #scrollUpButton {
   margin-bottom: 15px;
   display: inline-block;
 }
+
