@@ -8,16 +8,17 @@
   --color-fondo: #f8f8f8;
 }
 
-body {
+/* MENU / BODY */
+body { 
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding-top: 70px;              /* espacio por el menú fijo Bootstrap */
-  background-color: var(--color-fondo);
+  padding-top: 0;              /* antes 70px */
+  background-color: #e74c3c;   /* rojo principal */
   color: var(--color-secundario);
 }
 
-/* Caja blanca central para todo el contenido */
+/* Caja blanca central para todo el contenido principal */
 .container {
   padding: 20px;
   margin: 20px auto;
@@ -26,16 +27,21 @@ body {
   border-radius: 8px;
 }
 
+/* Contenedor ancho para portada si lo usas */
+.contenedor-principal {
+  max-width: 1320px;
+  margin: 0 auto 40px auto;
+}
+
 /* ===========================
    2. ENCABEZADOS Y ENLACES
    =========================== */
 
-header,
-footer {
-  text-align: center;
-  padding: 15px 0;
-  background-color: var(--color-principal);
-  color: #fff;
+.header-principal {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  background-color: transparent;
+  padding: 0;
 }
 
 h1, h2, h3 {
@@ -56,7 +62,7 @@ a:hover {
 
 /* Título principal del inicio */
 header h1 {
-  color: #fff;
+  color: #222;
   font-size: 2.5em;
   margin-bottom: 20px;
   padding-top: 20px;
@@ -77,7 +83,7 @@ header p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.4;
-  color: #fff;
+  color: #222;
 }
 
 .mision-principal {
@@ -87,20 +93,44 @@ header p {
   margin-top: 10px;
 }
 
+/* Banner portada */
+.titulo-principal {
+  color: #e3342f;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.objetivo-destacado {
+  color: #444444;
+  font-weight: 700;
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header img {
+  max-height: 220px;
+  object-fit: cover;
+}
+
 /* ===========================
    3. NAVEGACIÓN
    =========================== */
 
-/* Barra principal tipo Bootstrap docs */
 .barra-principal {
-  background-color: #212529;   
+  background-color: #212529;
+}
+
+/* BARRA FIJA */
+nav.navbar.barra-fija {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030;               
+  width: 100%;
+  z-index: 1000;
 }
-
 
 /* Logo en el navbar */
 .logo-marR {
@@ -108,7 +138,7 @@ header p {
   height: 30px;
 }
 
-/* Marca MarR: sin subrayado extra */
+/* Marca MarR */
 .navbar-brand {
   text-decoration: none;
 }
@@ -135,28 +165,32 @@ header p {
    =========================== */
 
 .nav-final-bar {
-  background-color: var(--color-principal);
+  background-color: #e74c3c;
   padding: 15px 0;
   text-align: center;
   color: #fff;
 }
 
-.nav-final-bar a {
+.nav-final-bar .nav-final-btn {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background-color: #c04541;
   color: #fff;
   font-weight: bold;
-  margin: 0 15px;
-  transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
-.nav-final-bar a:hover {
-  color: #333;
+.nav-final-bar .nav-final-btn:hover {
+  background-color: #a63935;
+  text-decoration: none;
 }
 
 /* ===========================
    5. IMÁGENES Y FIGURE
    =========================== */
 
-/* Todas las imágenes de contenido (Bootstrap + toque propio) */
 img.img-fluid {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.12);
@@ -218,43 +252,52 @@ button[type="submit"]:hover,
   transform: translateY(-2px);
 }
 
+/* Formulario 25 % más angosto (si se usa) */
+.form-wrapper {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* Botón especial en contacto (si se usa) */
+.boton-inicio-contacto {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
 /* ===========================
-   7. BOTONES FLOTANTES
+   7. BOTONES FLOTANTES (NUEVOS)
    =========================== */
 
-#scrollUpButton,
-#previousButton,
-#nextButton {
+.grupo-botones-flotantes {
   position: fixed;
   bottom: 20px;
-  background-color: var(--color-principal);
+  right: 20px;
+  z-index: 1000;
+  display: flex;      /* coloca los 3 en fila */
+  gap: 12px;          /* espacio entre botones */
+}
+
+/* visible solo desde md en adelante */
+@media (max-width: 767.98px) {
+  .grupo-botones-flotantes {
+    display: none;
+  }
+}
+
+.btn-flotante {
+  background-color: #e74c3c;
   color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  padding: 8px 16px;
+  border-radius: 6px;
   font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   text-decoration: none;
-  z-index: 1030;
-  cursor: pointer;
-  opacity: 0.9;
-  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;   /* evita que el texto salte de línea */
 }
 
-#nextButton     { right: 20px; }
-#previousButton { right: 140px; }
-#scrollUpButton { right: 160px; }
-
-/* Solo en la página de inicio (id="top") */
-body#top #scrollUpButton {
-  right: 260px;
-}
-
-#scrollUpButton:hover,
-#previousButton:hover,
-#nextButton:hover {
-  background-color: #C04A46;
-  opacity: 1;
-  transform: translateY(-2px);
+.btn-flotante:hover {
+  background-color: #c0392b;
 }
 
 /* ===========================
@@ -283,7 +326,7 @@ body#top #scrollUpButton {
 }
 
 /* ===========================
-   9. AJUSTES RESPONSIVE SUAVES
+   9. AJUSTES RESPONSIVE GENERALES
    =========================== */
 
 @media (max-width: 767.98px) {
@@ -291,18 +334,16 @@ body#top #scrollUpButton {
     padding: 15px;
     margin: 10px;
   }
-
-    #nextButton     { right: 20px; }
-    #previousButton { right: 140px; }
-    #scrollUpButton { right: 160px; } 
 }
+
 /* ===========================
-   10. AJUSTE BOTÓN INICIO CONTACTO
-   ============================ */
+   10. FOOTER
+   =========================== */
 
-.boton-inicio-contacto {
-  margin-top: 10px;
-  margin-bottom: 15px;
-  display: inline-block;
+footer {
+  background-color: #e74c3c;
+  color: #ffffff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.85rem;
 }
-
